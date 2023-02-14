@@ -8,6 +8,8 @@ import { TareaService } from 'src/app/service/tarea.service';
 })
 export class InicioComponent implements OnInit {
 
+
+  lista:any=[]
   constructor(private tareaService: TareaService){  }
 
   ngOnInit(): void {
@@ -17,10 +19,22 @@ export class InicioComponent implements OnInit {
   listarTareas(){
     this.tareaService.getTareas().subscribe(
       res=>{
-        console.log(res)
+        this.lista=res;
+        console.log(res);
       },
       error=> console.log(error)
-    )
+    );
+
+  }
+
+  eliminar(id:string){
+    this.tareaService.deleteTarea(id).subscribe(
+      res=>{
+        this.ngOnInit();
+        console.log(res);
+      },
+      error=> console.log(error)
+    );
   }
 
 }

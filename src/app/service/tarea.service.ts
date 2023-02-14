@@ -57,7 +57,7 @@ export class TareaService {
 }
 
 export interface Tarea{
-  Id: string;
-  Tarea:string;
-  Finalizado: boolean;
+  id: string;
+  tarea:string;
+  finalizado: boolean;
 }

@@ -1,1 +1,29 @@
-<p>:)</p>
+<div class="container">
+    <!-- routerLink: agregamos la ruta segun lo estipulamos en app-routing -->
+    <button class="btn btn-primary" [routerLink]="['/agregar']" routerLinkActive="router-link-active">agregar</button>
+    <table class="table">
+       <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tarea</th>
+            <th scope="col">Estado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tarea of lista">
+            <!-- id, tarea y finalizado debe ir segun la sintaxis del JSON de nuestra api rest -->
+            <td>{{tarea.id}}</td>
+            <td>{{tarea.tarea}}</td>
+            <td>{{tarea.finalizado}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="eliminar(tarea.id)">eliminar</button>
+                 <!-- routerLink: agregamos la ruta segun lo estipulamos en app-routing -->
+                <button class="btn btn-warning" [routerLink]="['/editar/', tarea.id]" routerLinkActive="router-link-active">editar</button>
+            </td>
+
+          </tr>
+       
+        </tbody>
+      </table>
+</div>

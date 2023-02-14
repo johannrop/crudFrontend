@@ -1,1 +1,10 @@
-<p>editar works!</p>
+<div class="container">
+    <label for="tarea">Tarea</label>
+    <input type="text" name="tarea" id="tarea" [(ngModel)]="tareaActual.tarea">
+    <br>
+    <label for="estado">Estado</label>
+    <input type="checkbox" name="estado" id="estado"  [(ngModel)]="tareaActual.finalizado">
+
+    <br>
+    <button class="btn btn-primary" (click)="guardar()" ></button>
+</div>
