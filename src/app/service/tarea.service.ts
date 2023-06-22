@@ -11,7 +11,7 @@ export class TareaService {
    * @Param url
    * Ruta donde se encuentra nuestra API Rest 
    */
-  url='http://localhost:8080/api/tareas'
+  url='http://ec2-3-237-91-174.compute-1.amazonaws.com:8000/api/tareas'
   constructor(private http: HttpClient) { }
 
   /**

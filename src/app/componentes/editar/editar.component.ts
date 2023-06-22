@@ -10,6 +10,7 @@ import { Tarea, TareaService } from 'src/app/service/tarea.service';
 export class EditarComponent implements OnInit {
 
   id:string="";
+  
   tareaActual: Tarea={id: '', tarea: '', finalizado:false };
 
   constructor(
